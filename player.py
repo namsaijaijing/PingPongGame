@@ -4,7 +4,8 @@ class Player():
     def __init__(self ,x ,y ,image):
         self.image = image
         self.rect = image.get_rect(x=x ,y=y)
-        self.velocity = 150
+        self.velocity = 200
+        self.score = 0
 
     def draw(self,screen):
         screen.blit(self.image ,(self.rect.x,self.rect.y))
@@ -34,8 +35,8 @@ class Player():
         self.check()
 
     def check(self):
-        if self.rect.y < 0:
-            self.rect.y = 0
+        if self.rect.y < 47:
+            self.rect.y = 47
         if self.rect.y > 455-120:
             self.rect.y = 455-120
         
